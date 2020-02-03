@@ -78,3 +78,14 @@ Temporary Items
 
 .vscode/*
 *.code-workspace
+
+
+### https://raw.github.com/github/gitignore/21e9f06539cdbc1ccbbb2ce59cd667be3e172fc8/Global/Vagrant.gitignore
+
+# General
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+*.log
+
+mount/*
