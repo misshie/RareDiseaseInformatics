@@ -1,4 +1,4 @@
-# JupyterHub + Bash Kernel の環境構築
+# JupyterHub + Bash Kernel 環境
 
 - JupyterHub はマルチユーザ用の JupyterNotebook 環境
   - PAM 認証を使ってそれぞれのユーザがサーバ上で JupyterNotebook を使えるようになる
@@ -8,7 +8,7 @@
 - Vagrant を用いて、Ubuntu 18.04 環境を作成し、導入する
   - Host にそのままインストールする場合は、Vagrant の項を飛ばす
 
-## 開発環境
+## 検証環境
 
 - OS
   - `macOS Catalina ver 10.15.2`
@@ -32,7 +32,7 @@ $ VBoxManage -v
 
 ## Vagrant
 
-- 開発環境と実行環境のズレを無くすために、開発環境として Ubuntu 18.04 環境を作成する
+- 検証環境と実行環境のズレを無くすために、検証環境として Ubuntu 18.04 環境を作成する
 
 ```bash
 $ ls
