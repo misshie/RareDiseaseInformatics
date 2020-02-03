@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: jupyter_notebook
+    container_name: jupyter_notebook
+    volumes:
+      - ${PWD}/mount:/mount
+    ports:
+      - 8888:8888
+    command:
+      ["--port=8888", "--ip=0.0.0.0", "--allow-root", "--notebook-dir=/mount"]
