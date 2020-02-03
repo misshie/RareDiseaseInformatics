@@ -173,3 +173,33 @@ $ jupyterhub
   - 起動後は通常の JupyterNotebook と同様に操作を行う
 
 ![notebook](./img/notebook.png)
+
+## JupyterHub の Service 化
+
+- JupyterHub を systemd で自動起動するように設定する
+
+```bash
+$ sudo curl -fsSL https://gist.githubusercontent.com/lambdalisue/f01c5a65e81100356379/raw/ecf427429f07a6c2d6c5c42198cc58d4e332b425/jupyterhub -o /etc/init.d/jupyterhub
+$ sudo chmod +x /etc/init.d/jupyterhub
+# いくつかの設定を書き換える。ここらへんは環境依存
+$ sudo sed -i -e "s#PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin#PATH=$(echo $PATH)#g" /etc/init.d/jupyterhub
+$ sudo sed -i -e "s#/etc/jupyterhub/jupyterhub_config.py#/mount/jupyterhub_config.py#g" /etc/init.d/jupyterhub
+$ sudo sed -i -e "45a cd /mount" /etc/init.d/jupyterhub
+
+$ sudo systemctl daemon-reload
+$ sudo update-rc.d jupyterhub defaults
+$ sudo systemctl start jupyterhub
+$ sudo systemctl status jupyterhub
+● jupyterhub.service - LSB: Start jupyterhub
+   Loaded: loaded (/etc/init.d/jupyterhub; generated)
+   Active: active (running) since Mon 2020-02-03 13:26:18 UTC; 6s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 14624 ExecStart=/etc/init.d/jupyterhub start (code=exited, status=0/SUCCESS)
+    Tasks: 10 (limit: 4703)
+   CGroup: /system.slice/jupyterhub.service
+           ├─14644 /usr/bin/python3 /usr/local/bin/jupyterhub --config=/mount/jupyterhub_config.py
+           └─14652 node /usr/local/bin/configurable-http-proxy --ip --port 8000 --api-ip 127.0.0.1 --api-port 8001 --error-target http://127.0.0.1:8081/hub/error
+
+Feb 03 13:26:18 ubuntu-bionic systemd[1]: Starting LSB: Start jupyterhub...
+Feb 03 13:26:18 ubuntu-bionic systemd[1]: Started LSB: Start jupyterhub.
+```
