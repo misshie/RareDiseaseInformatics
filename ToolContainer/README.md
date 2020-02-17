@@ -7,3 +7,61 @@
     - https://quay.io
   - Biocontainers
     - https://biocontainers.pro/#/
+
+## Tools
+
+- bcl2fastq
+  - `quay.io/biocontainers/bcl2fastq-nextseq`
+  - https://quay.io/repository/biocontainers/bcl2fastq-nextseq
+- Novoalign
+  - `quay.io/biocontainers/novoalign`
+  - https://quay.io/repository/biocontainers/novoalign
+- GATK
+  - `quay.io/biocontainers/gatk`
+  - https://quay.io/repository/biocontainers/gatk
+- BWA
+  - `quay.io/biocontainers/bwa`
+  - https://quay.io/repository/biocontainers/bwa
+- samtools
+  - `quay.io/biocontainers/samtools`
+  - https://quay.io/repository/biocontainers/samtools
+- Picard
+  - `quay.io/biocontainers/picard`
+  - https://quay.io/repository/biocontainers/picard
+- PLINK
+  - `quay.io/biocontainers/plink`
+  - https://quay.io/repository/biocontainers/plink
+- Bedtools
+  - `quay.io/biocontainers/bedtools`
+  - https://quay.io/repository/biocontainers/bedtools
+- LiftOver
+  - `quay.io/biocontainers/ucsc-liftover`
+  - https://quay.io/repository/biocontainers/ucsc-liftover
+- cutadapt
+  - `quay.io/biocontainers/cutadapt`
+  - https://quay.io/repository/biocontainers/cutadapt
+- bcftools
+  - `quay.io/biocontainers/bcftools`
+  - https://quay.io/repository/biocontainers/bcftools
+- snpEff
+  - `quay.io/biocontainers/snpeff`
+  - https://quay.io/repository/biocontainers/snpeff
+- MELT
+  - `quay.io/biocontainers/melt`
+  - https://quay.io/repository/biocontainers/melt
+- XHMM
+  - `quay.io/biocontainers/xhmm`
+  - https://quay.io/repository/biocontainers/xhmm
+- ANNOVAR
+  - `kfdrc/annovar`
+  - https://hub.docker.com/r/kfdrc/annovar
+- dbNSFP
+  - http://varianttools.sourceforge.net/Annotation/dbNSFP
+- SpliceAI
+  - https://github.com/Illumina/SpliceAI
+- ExomeDepth
+  - https://github.com/vplagnol/ExomeDepth
+- CODEX2
+  - https://github.com/yuchaojiang/CODEX2
+- Excavator2
+  - https://github.com/matheuscburger/Excavator2
